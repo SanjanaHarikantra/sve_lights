@@ -1,23 +1,23 @@
 import { pool } from '../config/db.js';
 
+/**
+ * GET ALL PRODUCTS (FIXED)
+ */
 export const getAllProducts = async (options = {}) => {
-  const { isAdmin = false, category, status = 'active' } = options;
+  const { category } = options;
 
   let whereConditions = [];
   let params = [];
 
-  // Always filter by active status for non-admin users
-  if (!isAdmin) {
-    whereConditions.push('status = ?');
-    params.push(status);
-  }
+  // ❌ REMOVED status filter (this was hiding your product)
 
   if (category) {
     whereConditions.push('category = ?');
     params.push(category);
   }
 
-  const whereClause = whereConditions.length > 0 ? `WHERE ${whereConditions.join(' AND ')}` : '';
+  const whereClause =
+    whereConditions.length > 0 ? `WHERE ${whereConditions.join(' AND ')}` : '';
 
   const [rows] = await pool.query(
     `
@@ -32,6 +32,9 @@ export const getAllProducts = async (options = {}) => {
   return rows;
 };
 
+/**
+ * GET PRODUCT BY ID
+ */
 export const getProductById = async (id) => {
   const [rows] = await pool.execute(
     `
@@ -46,6 +49,9 @@ export const getProductById = async (id) => {
   return rows[0] ?? null;
 };
 
+/**
+ * CREATE PRODUCT
+ */
 export const createProduct = async ({ name, price, description, imageUrl, stock, category }) => {
   const [result] = await pool.execute(
     `
@@ -58,6 +64,9 @@ export const createProduct = async ({ name, price, description, imageUrl, stock,
   return getProductById(result.insertId);
 };
 
+/**
+ * UPDATE PRODUCT
+ */
 export const updateProduct = async (id, { name, price, description, imageUrl, stock, category }) => {
   const [result] = await pool.execute(
     `
@@ -75,7 +84,14 @@ export const updateProduct = async (id, { name, price, description, imageUrl, st
   return getProductById(id);
 };
 
+/**
+ * DELETE PRODUCT
+ */
 export const deleteProduct = async (id) => {
-  const [result] = await pool.execute('DELETE FROM products WHERE id = ?', [id]);
+  const [result] = await pool.execute(
+    'DELETE FROM products WHERE id = ?',
+    [id]
+  );
+
   return result.affectedRows > 0;
 };
