@@ -1,0 +1,291 @@
+.heroSection {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-top: 6.25rem;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top right, rgba(128, 0, 32, 0.12), transparent 32%),
+    linear-gradient(180deg, color-mix(in srgb, var(--surface) 80%, transparent), var(--page-bg));
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+/* Content Side Styling */
+.contentSide {
+  grid-column: span 7;
+}
+
+.taglineWrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.horizontalLine {
+  width: 3rem;
+  height: 1px;
+  background-color: #800020;
+}
+
+.taglineText {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  color: #800020;
+}
+
+.fluidH1 {
+  font-size: clamp(2.5rem, 8vw + 1rem, 6rem);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+  letter-spacing: -0.05em;
+  margin-bottom: 2rem;
+  color: var(--text-primary);
+}
+
+.maroonGradientText {
+  background: linear-gradient(135deg, #800020 0%, #a52a2a 50%, #4a0404 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroDesc {
+  font-size: 1.125rem;
+  color: var(--text-soft);
+  max-width: 32rem;
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+/* Button Styling */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.btnMaroon {
+  background: linear-gradient(135deg, #800020, #4a0404);
+  color: white;
+  border: none;
+  padding: 1.25rem 2.5rem;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(128, 0, 32, 0.2);
+}
+
+.btnMaroon:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(128, 0, 32, 0.4);
+}
+
+.storyBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.9rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.storyText {
+  letter-spacing: 0.04em;
+}
+
+.arrowCircle {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--surface-strong);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.storyBtn:hover .arrowCircle {
+  transform: translateX(4px);
+  border-color: rgba(128, 0, 32, 0.35);
+}
+
+/* Carousel Side Styling */
+.visualSide {
+  grid-column: span 5;
+  position: relative;
+}
+
+.luxuryCard {
+  border-radius: 2rem;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  background: var(--surface-strong);
+  box-shadow: var(--shadow-soft);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.carouselContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.carouselTrack {
+  display: flex;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.carouselSlide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.carouselSlide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Indicators */
+.indicatorWrapper {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 0.75rem;
+}
+
+.indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(128, 0, 32, 0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.active {
+  width: 24px;
+  border-radius: 10px;
+  background: #800020;
+}
+
+@media (max-width: 1024px) {
+  .heroSection {
+    min-height: auto;
+    padding-top: 5.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .grid {
+    gap: 2rem;
+  }
+
+  .contentSide,
+  .visualSide {
+    grid-column: span 12;
+  }
+
+  .heroDesc {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding-top: 5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .container {
+    padding: 0 1rem;
+  }
+
+  .taglineWrapper {
+    margin-bottom: 1.25rem;
+    gap: 0.6rem;
+  }
+
+  .horizontalLine {
+    width: 2rem;
+  }
+
+  .taglineText {
+    font-size: 9px;
+    letter-spacing: 0.3em;
+  }
+
+  .fluidH1 {
+    font-size: clamp(2rem, 11vw, 3.3rem);
+    line-height: 0.95;
+    margin-bottom: 1.15rem;
+  }
+
+  .heroDesc {
+    font-size: 0.95rem;
+    line-height: 1.55;
+    margin-bottom: 1.15rem;
+  }
+
+  .ctaGroup {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.9rem;
+  }
+
+  .btnMaroon,
+  .storyBtn {
+    justify-content: center;
+  }
+
+  .btnMaroon {
+    width: 100%;
+    padding: 1rem 1.1rem;
+  }
+
+  .luxuryCard {
+    border-radius: 1.2rem;
+    aspect-ratio: 4 / 4.6;
+  }
+
+  .indicatorWrapper {
+    bottom: 1rem;
+  }
+}

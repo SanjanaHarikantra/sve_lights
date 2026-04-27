@@ -1,0 +1,350 @@
+/* ProductForm.module.css */
+
+.shell {
+  display: grid;
+  gap: 1rem;
+  padding: 0 1rem;
+  /* This ensures the content can scroll inside the modal if it's too tall */
+  max-height: 70vh; 
+  overflow-y: auto;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.95fr);
+  gap: 1.1rem;
+  align-items: start;
+  /* Add margin at bottom so content doesn't touch buttons */
+  margin-bottom: 1rem; 
+}
+
+.actions {
+  /* Change from sticky to flex to keep them in the flow */
+  display: flex;
+  gap: 0.75rem;
+  justify-content: flex-end;
+  
+  /* Pull the buttons up */
+  padding: 1rem 0; 
+  margin-top: 0; 
+  
+  /* Ensure they sit on top of any background */
+  background: var(--surface-strong);
+  border-top: 1px solid var(--border-soft);
+}
+
+/* Optional: Make the buttons slightly smaller to fit better */
+.submit,
+.cancel {
+  padding: 0.7rem 1.2rem;
+  font-size: 0.95rem;
+}
+
+/* .shell {
+  display: grid;
+  gap: 1rem;
+  padding: 1rem; 
+  max-height: 80vh; 
+  overflow-y: auto; 
+} */
+.formIntro {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  color: var(--text-secondary);
+}
+
+.formIntro h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.2;
+}
+
+.formIntro p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.form {
+  display: grid;
+  gap: 1rem;
+  min-height: 0;
+}
+
+/* .layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(300px, 0.95fr);
+  gap: 1.1rem;
+  align-items: start;
+} */
+
+.formColumn {
+  display: grid;
+  gap: 1rem;
+}
+
+.sectionCard,
+.previewCard,
+.tipCard {
+  border-radius: 22px;
+  border: 1px solid var(--border-soft);
+  background: color-mix(in srgb, var(--surface-strong) 94%, transparent);
+  box-shadow: var(--shadow-soft);
+}
+
+.sectionCard {
+  display: grid;
+  gap: 1rem;
+  padding: 1.1rem;
+}
+
+.sectionHeader {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.sectionHeader h4,
+.previewBody h4,
+.tipCard h4 {
+  margin: 0;
+}
+
+.sectionHeader p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-size: 0.92rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.sectionCard .field + .field {
+  margin-top: 0.1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.field label {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border-radius: 14px;
+  border: 1px solid var(--border-soft);
+  padding: 0.9rem 1rem;
+  background: var(--surface);
+  color: var(--text-primary);
+  font: inherit;
+  transition:
+    border-color var(--transition),
+    box-shadow var(--transition),
+    background-color var(--transition);
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--accent-maroon);
+  box-shadow: 0 0 0 3px rgba(140, 47, 35, 0.12);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 132px;
+}
+
+.field small {
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.previewPanel {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.previewCard {
+  overflow: hidden;
+}
+
+.previewHeader,
+.previewBody,
+.tipCard {
+  padding: 1rem 1.1rem;
+}
+
+.previewHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.previewLabel {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.previewCategory {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 94%, transparent);
+  border: 1px solid var(--border-soft);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.previewMedia {
+  min-height: 220px;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--surface) 92%, white 8%), var(--surface-muted));
+}
+
+.previewMedia img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.previewFallback {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  padding: 1.25rem;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.6;
+}
+
+.previewBody {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.previewBody p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.previewMeta {
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+}
+
+.previewMeta span {
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 95%, transparent);
+  border: 1px solid var(--border-soft);
+  font-weight: 600;
+}
+
+.tipCard {
+  display: grid;
+  gap: 0.7rem;
+}
+
+.tipCard ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* .actions {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  padding: 1rem 0 0;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), var(--surface-strong) 28%);
+  margin-top: 0.25rem;
+  z-index: 1;
+} */
+
+/* ProductForm.module.css */
+
+
+.submit,
+.cancel {
+  border-radius: 14px;
+  padding: 0.9rem 1.15rem;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  transition:
+    background-color var(--transition),
+    transform var(--transition),
+    opacity var(--transition);
+}
+
+.submit {
+  background: var(--accent-maroon);
+  color: #fff;
+}
+
+.submit:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.cancel {
+  background: var(--surface);
+  border-color: var(--border-soft);
+  color: var(--text-primary);
+}
+
+.cancel:hover {
+  background: var(--surface-muted);
+  border-color: var(--accent-maroon);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 760px) {
+  .layout,
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .actions {
+    justify-content: stretch;
+  }
+
+  .submit,
+  .cancel {
+    width: 100%;
+  }
+}

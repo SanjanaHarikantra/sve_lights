@@ -1,0 +1,370 @@
+.wrapper {
+  padding: 100px 80px;
+  transition: background-color 0.5s ease;
+  background-color: var(--page-bg);
+}
+
+.feedbackCard {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  border-radius: 40px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: background-color 0.5s ease;
+  background: var(--surface-strong);
+}
+
+.maroonPanel {
+  flex: 0.9;
+  background: linear-gradient(135deg, #4a0404, #2a0202);
+  padding: 60px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  opacity: 0.6;
+}
+
+.panelTitle {
+  font-size: 3.2rem;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 20px 0;
+}
+
+.panelDesc {
+  opacity: 0.7;
+  font-weight: 300;
+  line-height: 1.6;
+}
+
+.formPanel {
+  flex: 1.1;
+  padding: 60px;
+  color: var(--text-primary);
+}
+
+.feedbackForm {
+  width: 100%;
+}
+
+.inputGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.inputGroup label {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--text-soft);
+}
+
+/* Dropdown Container */
+.selectWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.selectBox {
+  width: 100%;
+  appearance: none; /* Removes default browser arrow */
+  -webkit-appearance: none;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-soft);
+  padding: 12px 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  color: inherit; /* Follows body text color */
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.selectBox:focus {
+  border-bottom-color: #800020;
+}
+
+/* Position the Lucide Icon */
+.selectIcon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none; /* Clicks pass through to the select box */
+  opacity: 0.65;
+}
+
+.textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--border-soft);
+  padding: 15px 0;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 500;
+  color: inherit;
+  resize: none;
+  height: 120px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.textarea:focus {
+  border-bottom-color: #800020;
+}
+
+.submitBtn {
+  margin-top: 40px;
+  width: 100%;
+  background: linear-gradient(135deg, #800020, #4a0404);
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  cursor: pointer;
+  font-size: 11px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(74, 4, 4, 0.2);
+}
+
+.submitBtn:disabled {
+  opacity: 0.75;
+  cursor: wait;
+}
+
+.submitBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(74, 4, 4, 0.3);
+  filter: brightness(1.2);
+}
+
+.viewReviewsBtn {
+  margin-top: 12px;
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--border-soft);
+  border-radius: 50px;
+  padding: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  text-decoration: none;
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+}
+
+.statusMessage {
+  margin-top: 18px;
+  margin-bottom: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.successMessage {
+  color: #1f8f57;
+}
+
+.errorMessage {
+  color: #c43d4b;
+}
+
+.reviewsSection {
+  max-width: 1100px;
+  margin: 30px auto 0;
+}
+
+.reviewsHeader {
+  margin-bottom: 14px;
+}
+
+.reviewsTitle {
+  margin: 10px 0 0;
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
+
+.reviewsHint {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.reviewCard {
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  background: color-mix(in srgb, var(--surface) 96%, transparent);
+  padding: 14px;
+  display: grid;
+  gap: 8px;
+}
+
+.reviewTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.reviewService {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--accent-maroon);
+}
+
+.reviewRating {
+  color: #c58a1a;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+}
+
+.reviewMessage {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  font-size: 0.92rem;
+}
+
+.reviewDate {
+  font-size: 0.76rem;
+  color: var(--text-soft);
+}
+
+.reviewsActions {
+  margin-top: 14px;
+}
+
+.loadMoreBtn {
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-soft);
+  padding: 10px 16px;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .wrapper {
+    padding: 84px 28px;
+  }
+
+  .maroonPanel,
+  .formPanel {
+    padding: 42px;
+  }
+
+  .panelTitle {
+    font-size: 2.6rem;
+  }
+
+  .inputGrid {
+    gap: 20px;
+  }
+
+  .reviewsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .feedbackCard {
+    flex-direction: column;
+    border-radius: 22px;
+  }
+
+  .wrapper {
+    padding: 64px 16px;
+  }
+
+  .maroonPanel,
+  .formPanel {
+    padding: 24px 18px;
+  }
+
+  .panelTitle {
+    font-size: 2rem;
+    margin: 12px 0;
+  }
+
+  .panelDesc {
+    font-size: 0.92rem;
+    line-height: 1.55;
+  }
+
+  .inputGrid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .textarea {
+    height: 100px;
+  }
+
+  .submitBtn {
+    margin-top: 24px;
+    padding: 15px;
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .statusMessage {
+    margin-top: 12px;
+    font-size: 0.9rem;
+  }
+
+  .reviewsTitle {
+    font-size: 1.35rem;
+  }
+
+  .reviewsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviewCard {
+    border-radius: 14px;
+  }
+}
+
+.textarea::placeholder {
+  color: var(--text-soft);
+}

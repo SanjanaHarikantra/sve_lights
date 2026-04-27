@@ -1,0 +1,113 @@
+.card {
+  display: grid;
+  grid-template-rows: 220px 1fr;
+  overflow: hidden;
+  border-radius: 28px;
+  background: var(--surface-strong);
+  border: 1px solid var(--border-soft);
+  box-shadow: var(--shadow-soft);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.body {
+  padding: 1.25rem;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.titleRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.price {
+  white-space: nowrap;
+  color: var(--accent-maroon);
+  font-weight: 700;
+}
+
+.description {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.statusRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.status {
+  padding: 0.42rem 0.75rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.statusInStock {
+  color: #12663e;
+  background: rgba(18, 102, 62, 0.12);
+}
+
+.statusOutOfStock {
+  color: #a12727;
+  background: rgba(161, 39, 39, 0.12);
+}
+
+.lowStock {
+  color: #8a5b08;
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.primaryAction,
+.secondaryAction,
+.dangerAction {
+  border-radius: 14px;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font: inherit;
+}
+
+.primaryAction {
+  background: var(--text-primary);
+  color: #fff;
+}
+
+.secondaryAction {
+  background: var(--surface);
+  color: var(--text-primary);
+  border-color: var(--border-soft);
+}
+
+.dangerAction {
+  background: #a12727;
+  color: #fff;
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
