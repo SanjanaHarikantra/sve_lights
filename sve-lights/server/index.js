@@ -5,8 +5,7 @@ import { config } from './config/env.js';
 import { countUsers, createUser, findUserByEmail } from './models/userModel.js';
 
 const ensureSchema = async () => {
-  await pool.query(`CREATE DATABASE IF NOT EXISTS sve_lights`);
-  await pool.query(`USE sve_lights`);
+ 
   await pool.query(`
     CREATE TABLE IF NOT EXISTS feedback (
       id INT AUTO_INCREMENT PRIMARY KEY,
